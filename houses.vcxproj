@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FF25BB8F-15D9-4A77-8049-8A877F41C60A}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\SDL2\include;$(SolutionDir)deps\freeglut\include;$(WindowsSDK_IncludePath);$(SolutionDir)deps\freeglut\include;$(SolutionDir)deps\SDL2\include;$(VC_IncludePath);$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)deps\SDL2\lib\x86;$(SolutionDir)deps\freeglut\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\SDL2\include;$(SolutionDir)deps\freeglut\include;$(SolutionDir)deps\freeglut\include;$(SolutionDir)deps\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)deps\SDL2\lib\x86;$(SolutionDir)deps\freeglut\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\houses.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\houses.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\houses.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>.\Debug\houses.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;SDL2.lib;SDL2main.lib;freeglut.lib;SDL2.lib;SDL2main.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\houses.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\houses.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\houses.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>.\Release\houses.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;SDL2.lib;SDL2main.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AABB.CPP" />
+    <ClCompile Include="AABBLinkedList.cpp" />
+    <ClCompile Include="AABBNode.cpp" />
+    <ClCompile Include="AgentX.cpp" />
+    <ClCompile Include="AgentY.cpp" />
+    <ClCompile Include="AgentZ.cpp" />
+    <ClCompile Include="BoundingBox.cpp" />
+    <ClCompile Include="BoundingSphere.cpp" />
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="cameraMap.cpp" />
+    <ClCompile Include="collision.cpp" />
+    <ClCompile Include="EasySound.cpp" />
+    <ClCompile Include="FrameTimer.cpp" />
+    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="game_Manager.cpp" />
+    <ClCompile Include="game_Physics.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="main.cpp">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</FunctionLevelLinking>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="MovingAgent.cpp" />
+    <ClCompile Include="NewSound.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="OBJLoader.cpp" />
+    <ClCompile Include="PlainLinkedList.cpp" />
+    <ClCompile Include="PlainNode.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="SoundTime.cpp" />
+    <ClCompile Include="texturedPolygons.cpp" />
+    <ClCompile Include="WaitingAi.cpp" />
+    <ClCompile Include="Zone.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AABB.H" />
+    <ClInclude Include="AABBLinkedList.h" />
+    <ClInclude Include="AABBNode.h" />
+    <ClInclude Include="AgentX.h" />
+    <ClInclude Include="AgentY.h" />
+    <ClInclude Include="AgentZ.h" />
+    <ClInclude Include="BoundingBox.h" />
+    <ClInclude Include="BoundingSphere.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="cameraMap.h" />
+    <ClInclude Include="collision.h" />
+    <ClInclude Include="EasySound.h" />
+    <ClInclude Include="FrameTimer.h" />
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="game_Manager.h" />
+    <ClInclude Include="game_Physics.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="MovingAgent.h" />
+    <ClInclude Include="NewSound.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="OBJLoader.h" />
+    <ClInclude Include="PlainLinkedList.h" />
+    <ClInclude Include="PlainNode.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="SoundTime.h" />
+    <ClInclude Include="texturedPolygons.h" />
+    <ClInclude Include="WaitingAi.h" />
+    <ClInclude Include="Zone.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
